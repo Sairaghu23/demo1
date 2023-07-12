@@ -18,10 +18,6 @@ function openFile(event) {
     case "22280-CM-001":
       imageContainer.innerHTML = '<img src="Dipoma1stresultspdf_page-0001.jpg" width="50%" alt="Result Image">';
       break;
-      case "21280-CM-026":
-        var filePath = "Vinaya-Vidheya-Rama-2019.MP4"; // Replace with the actual file path on the user's system
-        window.open(filePath);
-        break;
 
     default:
       alert("Invalid PIN");
@@ -29,7 +25,7 @@ function openFile(event) {
   }
 }
 else {
-  error.innerHtml = '<p style="color:red">Invalid Details</p>';
+  error.innerHTML = '<p style="color:red">ERROR/Not registered</p>';
 }
 }
 
@@ -40,7 +36,8 @@ else {
 <div id="h1">
 <h1>Diploma Results</h1>
 </div>
-<div id="error"></div>
+<div id="error">
+</div>
 <div id="form">
 <form onsubmit="return openFile(event)">
 Pin*:<input type="text" id="pinbar">
