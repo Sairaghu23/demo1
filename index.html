@@ -10,21 +10,14 @@ function openFile(event) {
 
   var pinbar = document.getElementById("pinbar").value;
  var select = document.getElementById("select").value;
- if(select==='1year')
+ var  imageContainer = document.getElementById("imageContainer");
+  var error = document.getElementById("error");
+  if(select==='1year')
  {
   switch (pinbar) {
     case "22280-CM-001" , "22280-cm-001":
-    const documentLocation = "try.html"; // Replace with the location of your document
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-    if (isMobile) {
-      window.location.href = "try.html";
-    }
-    else{
-      var filePath = "try.html"; // Replace with the actual file path on the user's system
-      window.open(filePath);
+      imageContainer.innerHTML = '<img src="Dipoma1stresultspdf_page-0001.jpg" width="50%" alt="Result Image">';
       break;
-    }
       case "21280-CM-026":
         var filePath = "Vinaya-Vidheya-Rama-2019.MP4"; // Replace with the actual file path on the user's system
         window.open(filePath);
@@ -36,7 +29,7 @@ function openFile(event) {
   }
 }
 else {
-  alert("Please Enter Valid details");
+  error.innerHtml='<p style="color:red">Invalid Details</p>';
 }
 }
 
@@ -47,6 +40,7 @@ else {
 <div id="h1">
 <h1>Diploma Results</h1>
 </div>
+<div id="error"></div>
 <div id="form">
 <form onsubmit="return openFile(event)">
 Pin*:<input type="text" id="pinbar">
@@ -64,6 +58,7 @@ Semester:
 </div>
 </form>
 </div>
+<div id="imageContainer"></div>
 <div>
 <footer id="footer">
 @Copy Rights Reserved With Final Year Students
