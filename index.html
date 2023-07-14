@@ -12,8 +12,8 @@ function openFile(event) {
  var select = document.getElementById("select").value;
  var  imageContainer = document.getElementById("imageContainer");
   var error = document.getElementById("error");
-  if(select==='1year')
- {
+switch(select){
+  case "1year" :
   switch (pinbar) {
     case "22280-CM-001":
       imageContainer.innerHTML = '<img src="Dipoma1stresultspdf_page-0001.jpg" width="50%" alt="Result Image">';
@@ -51,23 +51,20 @@ case "22280-CM-011":
 case "22280-CM-012":
       imageContainer.innerHTML = '<img src="Dipoma1stresultspdf_page-0012.jpg" width="50%" alt="Result Image">';
       break;
-
-
-    default:
-      alert("Invalid PIN");
-      break;
   }
-}
-  if(select==='4sem')
-  {
-   switch(pinbar)
+break;
+case "4sem": 
+      switch(pinbar)
      {
        case "21280-CM-005" :
          imageContainer.innerhtml = '<img src="anvesh_page-0001.jpg" width="50%" alt="Result Image">';
          break;
      }
-    
-  }
+   break;
+    default:
+      alert("Invalid PIN");
+      break;
+}
 else {
   error.innerHTML = '<p style="color:red">ERROR/Not registered</p>';
 }
