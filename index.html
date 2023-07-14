@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>SbtetAudistudentsdiplomaresults</title>
+<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNb84NvywWV84SQHt0lirZfljHvZx1y6sFzrorFtKoyl0R2wnrj85eETjNvdipDhQkT-o&usqp=CAU" type="image/jpg">
+<link rel="stylesheet" href="result.css">
+<meta name="viewport" content="width=device-width, initial-scale=0">
+<script type="text/javascript">
+function openFile(event) {
+  event.preventDefault(); // Prevent form submission
+
+  var pinbar = document.getElementById("pinbar").value;
+ var select = document.getElementById("select").value;
+ var imageContainer = document.getElementById("imageContainer");
+ var error = document.getElementById("error");
+var dowload = document.getElementById("dowload");
+ if(select==='1year')
+ {
+  switch (pinbar) {
+    case "22280-CM-001":
+  imageContainer.innerHTML = '<img src="Dipoma1stresultspdf_page-0001.jpg" width="100%" alt="Result Image">';
+  dowload.innerHTML='<input type="button" value="Dowload" onclick="dowload()">'
+      break;
+default :
+ error.innerHTML='<p style="color:red">ERROR OCCURED</p>';
+ break;
+  }
+}
+else if(select==='4sem')
+{
+switch (pinbar) {
+  case "21280-CM-005":
+    imageContainer.innerHTML = '<img src="anvesh_page-0001.jpg" width="100%">';
+    break;
+}
+
+}
+else {
+  error.innerHTML='<p style="color:red">ERROR OCCURED</p>';
+}
+}
+function dowload()
+{
+window.open("Dipoma1stresultspdf_page-0001.jpg");
+}
+</script>
+
+</head>
+<body>
+<div id="h1">
+<h1 id="smoke-effect">Diploma Results</h1>
+</div>
+<div id="error">
+</div>
+<div id="form">
+<form onsubmit="return openFile(event)">
+Pin*:<input type="text" id="pinbar">
+Enter
+Semester:
+<select id="select">
+<optgroup>
+<option value="select">---Select Semester---</option>
+<option value="1year">1year</option>
+<option value="4sem">4sem</option>
+</optgroup>
+</select>
+<div id="submit">
+<button type="submit"> SUBMIT</button>
+<button type="button" onclick="location.reload()">Reload</button>
+</div>
+</form>
+<div id="imageContainer">
+</div>
+<div id="dowload">
+</div>
+</div>
+<div>
+<footer id="footer">
+@Copy Rights Reserved With Final Year Students
+</footer>
+</div>
+</body>
+</html>
