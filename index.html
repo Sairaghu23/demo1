@@ -9,61 +9,52 @@ function openFile(event) {
   event.preventDefault(); // Prevent form submission
 
   var pinbar = document.getElementById("pinbar").value;
- var select = document.getElementById("select").value;
- var imageContainer = document.getElementById("imageContainer");
- var error = document.getElementById("error");
-var dowload = document.getElementById("dowload");
- if(select==='1year')
- {
-  switch (pinbar) {
-    case "22280-CM-001":
-  imageContainer.innerHTML = '<img src="Dipoma1stresultspdf_page-0001.jpg" width="100%" alt="Result Image">';
-  dowload.innerHTML='<input type="button" value="Dowload" onclick="dowload()">';
-      break;
-    case "21280-CM-005":
-  imageContainer.innerHTML = '<img src="Anvesh1year_page-0001" width="100%" alt="Result Image">';
-  dowload.innerHTML='<input type="button" value="Dowload" onclick="dowloadanvesh()">';
-      break;
-      
-default :
- error.innerHTML='<p style="color:red">ERROR OCCURED</p>';
- break;
+  var select = document.getElementById("select").value;
+  var imageContainer = document.getElementById("imageContainer");
+  var error = document.getElementById("error");
+  var download = document.getElementById("download");
+
+  if (select === '1year') {
+    switch (pinbar) {
+      case "22280-CM-001":
+        imageContainer.innerHTML = '<img src="Dipoma1stresultspdf_page-0001.jpg" width="100%" alt="Result Image">';
+        download.innerHTML = '<input type="button" value="Download" onclick="downloadFile(\'Dipoma1stresultspdf_page-0001.jpg\')">';
+        break;
+      case "21280-CM-005":
+        imageContainer.innerHTML = '<img src="Anvesh1year_page-0001.jpg" width="100%" alt="Result Image">';
+        download.innerHTML = '<input type="button" value="Download" onclick="downloadFile(\'Anvesh1year_page-0001.jpg\')">';
+        break;
+      default:
+        error.innerHTML = '<p style="color:red">ERROR OCCURRED</p>';
+        break;
+    }
+  } else if (select === '4sem') {
+    switch (pinbar) {
+      case "21280-CM-005":
+        imageContainer.innerHTML = '<img src="anvesh_page-0001.jpg" width="100%">';
+        break;
+      default:
+        error.innerHTML = '<p style="color:red">ERROR OCCURRED</p>';
+        break;
+    }
+  } else if (select === "3sem") {
+    switch (pinbar) {
+      case "21280-CM-005":
+        imageContainer.innerHTML = '<img src="Anvesh3sem_page-0001.jpg" width="100%">';
+        break;
+      default:
+        error.innerHTML = '<p style="color:red">ERROR OCCURRED</p>';
+        break;
+    }
+  } else {
+    error.innerHTML = '<p style="color:red">ERROR OCCURRED</p>';
   }
 }
-else if(select==='4sem')
-{
-switch (pinbar) {
-  case "21280-CM-005":
-    imageContainer.innerHTML = '<img src="anvesh_page-0001.jpg" width="100%">';
-    break;
-  default :
- error.innerHTML='<p style="color:red">ERROR OCCURED</p>';
- break;
+
+function downloadFile(fileName) {
+  window.open(fileName);
 }
-}
-else if(select==="3sem")
-{
-switch (pinbar) {
-  case "21280-CM-005":
-    imageContainer.innerHTML = '<img src="Anvesh3sem_page-0001" width="100%">';
-    break;
-  default :
- error.innerHTML='<p style="color:red">ERROR OCCURED</p>';
- break;
-  
-}
-else {
-  error.innerHTML='<p style="color:red">ERROR OCCURED</p>';
-}
-}
-function dowload()
-{
-window.open("Dipoma1stresultspdf_page-0001.jpg");
-}
- function dowloadanvesh()
-   {
-   window.open("Anvesh1year.pdf");
-   }
+
 </script>
 
 </head>
@@ -76,8 +67,7 @@ window.open("Dipoma1stresultspdf_page-0001.jpg");
 <div id="form">
 <form onsubmit="return openFile(event)">
 Pin*:<input type="text" id="pinbar">
-Enter
-Semester:
+Enter Semester:
 <select id="select">
 <optgroup>
 <option value="select">---Select Semester---</option>
@@ -93,7 +83,7 @@ Semester:
 </form>
 <div id="imageContainer">
 </div>
-<div id="dowload">
+<div id="download">
 </div>
 </div>
 <div>
