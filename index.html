@@ -20,6 +20,11 @@ var dowload = document.getElementById("dowload");
   imageContainer.innerHTML = '<img src="Dipoma1stresultspdf_page-0001.jpg" width="100%" alt="Result Image">';
   dowload.innerHTML='<input type="button" value="Dowload" onclick="dowload()">'
       break;
+    case "21280-CM-005":
+  imageContainer.innerHTML = '<img src="Anvesh1year_page-0001" width="100%" alt="Result Image">';
+  dowload.innerHTML='<input type="button" value="Dowload" onclick="dowloadanvesh()">'
+      break;
+      
 default :
  error.innerHTML='<p style="color:red">ERROR OCCURED</p>';
  break;
@@ -35,7 +40,17 @@ switch (pinbar) {
  error.innerHTML='<p style="color:red">ERROR OCCURED</p>';
  break;
 }
-
+}
+else if(select==="3sem")
+{
+switch (pinbar) {
+  case "21280-CM-005":
+    imageContainer.innerHTML = '<img src="Anvesh3sem_page-0001" width="100%">';
+    break;
+  default :
+ error.innerHTML='<p style="color:red">ERROR OCCURED</p>';
+ break;
+  
 }
 else {
   error.innerHTML='<p style="color:red">ERROR OCCURED</p>';
@@ -45,6 +60,10 @@ function dowload()
 {
 window.open("Dipoma1stresultspdf_page-0001.jpg");
 }
+ function dowloadanvesh()
+   {
+   window.open("Anvesh1year.pdf");
+   }
 </script>
 
 </head>
@@ -63,6 +82,7 @@ Semester:
 <optgroup>
 <option value="select">---Select Semester---</option>
 <option value="1year">1year</option>
+<option value="3sem">3sem</option>
 <option value="4sem">4sem</option>
 </optgroup>
 </select>
