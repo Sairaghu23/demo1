@@ -65,7 +65,11 @@ border-width: 5px;
 border*/
 
 }
-
+#color
+{
+color:red;
+font-size:10px;
+}
 #footer
 {
 margin-top: 300px;
