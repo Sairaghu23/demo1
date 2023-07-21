@@ -13,12 +13,13 @@ function openFile(event) {
   var imageContainer = document.getElementById("imageContainer");
   var error = document.getElementById("error");
   var download = document.getElementById("download");
-
+  var scroll = document.getElementById("scroll");
   if (select === '1year') {
     switch (pinbar) {
       case "22280-CM-001":
         imageContainer.innerHTML = '<img src="Dipoma1stresultspdf_page-0001.jpg" width="100%" alt="Result Image">';
-        download.innerHTML = '<input type="button" value="Download" onclick="downloadFile(\'Dipoma1stresultspdf_page-0001.jpg\')">';
+        /*download.innerHTML = '<input type="button" value="Download" onclick="downloadFile(\'Dipoma1stresultspdf_page-0001.jpg\')">';*/
+        scroll.innerHTML='<marquee><span id="color">For Dowload</span>:long press on the Result</marquee>';
         break;
         case "22280-CM-002":
         imageContainer.innerHTML = '<img src="Dipoma1stresultspdf_page-0002.jpg" width="100%" alt="Result Image">';
@@ -215,6 +216,9 @@ Pin*:<input type="text" id="pinbar">
 <div id="imageContainer">
 </div>
 <div id="download">
+</div>
+<div>
+  <span id="scroll"></span>
 </div>
 </div>
 <div>
